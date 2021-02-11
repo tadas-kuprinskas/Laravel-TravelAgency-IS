@@ -88,7 +88,9 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, Customer $customer){
+        
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
@@ -100,9 +102,7 @@ class CustomerController extends Controller
         $customer->fill($request->all());
         $customer->save();
         return redirect()->route('customer.index');
-
     }
-
 
     /**
      * Remove the specified resource from storage.

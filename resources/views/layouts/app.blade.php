@@ -21,7 +21,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    
+
 </head>
 
 <body>
@@ -57,11 +57,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <a href="/changelanguage/en"><i title="English" class="flag flag-united-kingdom"></i></a>
+                        <a href="/changelanguage/lt"><i title="Lithuanian" class="flag flag-lithuania"></i></a>
+
                         <!-- Authentication Links -->
-                       
-                            <a href="/changelanguage/en"><i class="flag flag-united-kingdom"></i></a>
-                            <a href="/changelanguage/lt"><i class="flag flag-lithuania"></i></a>
-                        
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -84,7 +83,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
+                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('messages.logout') }}
                                     </a>
 
