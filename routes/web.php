@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function(){
     Route::get('customer/{id}/travel', [App\Http\Controllers\CustomerController::class, 'travel'])->name('customer.travel');
+    Route::get('/', [App\Http\Controllers\CustomerController::class, 'index']);
     Route::resource('customer', App\Http\Controllers\CustomerController::class);
     Route::resource('country', App\Http\Controllers\CountryController::class);
     Route::resource('town', App\Http\Controllers\TownController::class);

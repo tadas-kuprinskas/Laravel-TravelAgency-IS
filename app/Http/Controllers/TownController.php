@@ -12,8 +12,13 @@ class TownController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-        return view('town.index', ['towns' => Town::orderBy('title')->get()]);
+    public function index(Request $request){
+        if(isset($request->country_id) && $request->country_id !== 0)
+            $towns = \App\Models\Town::where('country_id', $request->country_id)->orderBy('title')->get();
+        else
+            $towns = \App\Models\Town::orderBy('title')->get();
+        $countries = \App\Models\Country::orderBy('title')->get();
+        return view('town.index', ['towns' => $towns, 'countries' => $countries]);
     }
 
 
@@ -35,10 +40,17 @@ class TownController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'population' => 'required',
+            'country_id' => 'required',
+        ]);
+
         $town = new Town();
         $town->fill($request->all());
         $town->save();
         return redirect()->route('town.index');
+
     }
 
 
@@ -73,9 +85,16 @@ class TownController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Town $town){
+        $request->validate([
+            'title' => 'required',
+            'population' => 'required',
+            'country_id' => 'required',
+        ]);
+
         $town->fill($request->all());
         $town->save();
         return redirect()->route('town.index');
+
     }
 
 

@@ -1,6 +1,20 @@
 @extends('layouts.app')
 @section('content')
 <div class="card-body">
+    <form class="form-inline" action="{{ route('town.index') }}" method="get">
+        <select name="country_id" id="" class="form-control">
+            <option value="" selected disabled>Filter towns by country</option>
+            @foreach ($countries as $country)
+            <option value="{{ $country->id }}" 
+                @if($country->id == app('request')->input('country_id')) 
+                    selected="selected" 
+                @endif>{{ $country->title }}</option>
+            @endforeach
+        </select>
+        <button type="submit" class="btn btn-primary mx-2">Filter</button>
+        <a class="btn btn-secondary" href={{ route('town.index') }}>Show all</a>
+    </form>
+    <br>
     <table class="table">
         <tr>
             <th>Title</th>

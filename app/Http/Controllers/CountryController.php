@@ -34,10 +34,17 @@ class CountryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        $request->validate([
+            'title' => 'required',
+            'distance' => 'required',
+            'description' => 'required',
+        ]);
+
         $country = new Country();
         $country->fill($request->all());
         $country->save();
         return redirect()->route('country.index');
+
     }
  
 
@@ -72,9 +79,16 @@ class CountryController extends Controller
      */
     public function update(Request $request, Country $country)
     {
+        $request->validate([
+            'title' => 'required',
+            'distance' => 'required',
+            'description' => 'required',
+        ]);
+        
         $country->fill($request->all());
         $country->save();
         return redirect()->route('country.index'); 
+
     }
 
     /**

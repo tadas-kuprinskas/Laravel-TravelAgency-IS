@@ -40,12 +40,21 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'country_id' => 'required',
+        ]);
+
         $customer = new Customer();
         // can be used for seeing the insides of the incoming request
         // dd($request->all());;
         $customer->fill($request->all());
         $customer->save();
         return redirect()->route('customer.index');
+
     }
 
 
@@ -80,9 +89,18 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Customer $customer){
+        $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'country_id' => 'required',
+        ]);
+
         $customer->fill($request->all());
         $customer->save();
         return redirect()->route('customer.index');
+
     }
 
 
@@ -95,7 +113,9 @@ class CustomerController extends Controller
     public function destroy(Customer $customer, Request $request)
     {
         $customer->delete();
-        return redirect()->route('customer.index', ['country_id'=> $request->input('country_id')]);
+        $previousUrl = app('url')->previous();
+        return redirect()->to($previousUrl . http_build_query(['country_id'=> $request->input('country_id')]));
+        // return redirect()->route('customer.index', ['country_id'=> $request->input('country_id')]);
     }
 
     public function travel($id){

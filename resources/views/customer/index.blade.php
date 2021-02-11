@@ -12,7 +12,7 @@
             @endforeach
         </select>
         <button type="submit" class="btn btn-primary mx-2">Filter</button>
-        <a class="btn btn-success" href={{ route('customer.index') }}>Show all</a>
+        <a class="btn btn-secondary" href={{ route('customer.index') }}>Show all</a>
     </form>
 </div>
 <div class="card-body">
