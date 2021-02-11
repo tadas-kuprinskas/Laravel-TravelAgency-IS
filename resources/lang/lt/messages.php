@@ -28,8 +28,12 @@ return [
     'phone' => 'Telefono Nr.',
     'will_travel_to' => 'Keliaus į',
     'change_the_country' => 'Pakeisti šalį',
-    'trip_details',
-    'show_all',
-    'filter_clients_by_country'
-
+    'trip_details' => 'Kelionės detalės',
+    'show_all' => 'Rodyti visus',
+    'filter_clients_by_country' => 'Filtruoti klientus pagal šalį',
+    'details_of_the_trip' => 'Kelionės detalės',
+    'distance' => 'Atstumas',
+    'description' => 'Aprašymas',
+    'create_a_country' => 'Pridėti šalį',
+    'edit_a_country' => 'Redaguoti šalį',
 ];

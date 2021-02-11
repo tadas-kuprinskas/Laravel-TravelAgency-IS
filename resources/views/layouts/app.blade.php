@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -19,6 +20,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    
 </head>
 
 <body>
@@ -36,34 +39,40 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    
+
                     <ul class="navbar-nav mr-auto">
                         @auth
-                        <li class="nav-item">
-                            <a href="{{ route('country.index') }}" class="nav-link">{{ __('messages.country') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('town.index') }}" class="nav-link">{{ __('messages.town') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('customer.index') }}" class="nav-link">{{ __('messages.customer') }}</a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="{{ route('country.index') }}" class="nav-link">{{ __('messages.country') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('town.index') }}" class="nav-link">{{ __('messages.town') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('customer.index') }}"
+                                    class="nav-link">{{ __('messages.customer') }}</a>
+                            </li>
                         @endauth
                     </ul>
-                    
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                       
+                            <a href="/changelanguage/en"><i class="flag flag-united-kingdom"></i></a>
+                            <a href="/changelanguage/lt"><i class="flag flag-lithuania"></i></a>
+                        
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('message.login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('messages.login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('message.register') }}</a>
+                                    <a class="nav-link"
+                                        href="{{ route('register') }}">{{ __('messages.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -75,8 +84,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                        {{ __('message.logout') }}
+                                                             document.getElementById('logout-form').submit();">
+                                        {{ __('messages.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -98,10 +107,11 @@
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-          selector: '#mce'
+            selector: '#mce'
         });
-      </script>
-  
+
+    </script>
+
 </body>
 
 </html>

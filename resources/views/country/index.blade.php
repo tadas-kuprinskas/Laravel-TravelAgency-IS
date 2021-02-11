@@ -3,21 +3,21 @@
 <div class="card-body">
     <table class="table">
         <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Distance</th>
-            <th>Actions</th>
+            <th>{{ __('messages.title') }}</th>
+            <th>{{ __('messages.distance') }}</th>
+            <th>{{ __('messages.description') }}</th>
+            <th>{{ __('messages.actions') }}</th>
         </tr>
         @foreach ($countries as $country)
         <tr>
             <td>{{ $country->title }}</td>
-            <td>{!! $country->description !!}</td>
             <td>{{ $country->distance }}</td>
+            <td>{!! $country->description !!}</td>
             <td>
                 <form action={{ route('country.destroy', $country->id) }} method="POST">
-                    <a class="btn btn-success" href={{ route('country.edit', $country->id) }}>Edit</a>
+                    <a class="btn btn-success" href={{ route('country.edit', $country->id) }}>{{ __('messages.edit') }}</a>
                     @csrf @method('delete')
-                    <input type="submit" class="btn btn-danger" value="Delete"/>
+                    <input type="submit" class="btn btn-danger" value="{{ __('messages.delete') }}"/>
                 </form>
             </td>
 
@@ -25,7 +25,7 @@
         @endforeach
     </table>
     <div>
-        <a href="{{ route('country.create') }}" class="btn btn-success">Add</a>
+        <a href="{{ route('country.create') }}" class="btn btn-success">{{ __('messages.add') }}</a>
     </div>
 </div>
 @endsection

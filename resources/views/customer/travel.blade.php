@@ -1,18 +1,18 @@
 @extends('layouts.app')
 @section('content')
 <div class="card">
-    <div class="card-header">Details of the trip</div>
+    <div class="card-header">{{ __('messages.details_of_the_trip') }}</div>
     <div class="card-body">
-        <h5>Customer: {{ $customer->name }} {{$customer->surname}}</h5>
-        <h5>Phone: {{ $customer->phone }}</h5>
-        <h5>Email: {{ $customer->email }}</h5>
+        <h5>{{ __('messages.customer') }}: {{ $customer->name }} {{$customer->surname}}</h5>
+        <h5>{{ __('messages.phone') }}: {{ $customer->phone }}</h5>
+        <h5>{{ __('messages.email') }}: {{ $customer->email }}</h5>
         <hr>
-        <h5>Country:  {{ $customer->country->title }}</h5>
-        <h5>Towns: </h5>
+        <h5>{{ __('messages.country') }}:  {{ $customer->country->title }}</h5>
+        <h5>{{ __('messages.town') }}: </h5>
         <table class="table">
             <tr>
-                <th>Name of the town</th>
-                <th>Population</th>
+                <th>{{ __('messages.town') }}</th>
+                <th>{{ __('messages.population') }}</th>
             </tr>
             @foreach ($customer->country->towns as $town)
             <tr>

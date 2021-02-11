@@ -19,32 +19,32 @@
                         <form method="POST" action="{{ route('customer.update', $customer->id) }}">
                             @csrf @method("PUT")
                             <div class="form-group">
-                                <label>Name </label>
+                                <label>{{ __('messages.name') }} </label>
                                 <input type="text" name="name" class="form-control" value="{{ $customer->name }}">
                             </div>
                             <div class="form-group">
-                                <label>Surname </label>
+                                <label>{{ __('messages.surname') }} </label>
                                 <input type="text" name="surname" class="form-control" value="{{ $customer->surname }}">
                             </div>
                             <div class="form-group">
-                                <label>Email: </label>
+                                <label>{{ __('messages.email') }}: </label>
                                 <input type="text" name="email" class="form-control" value="{{ $customer->email }}">
                             </div>
                             <div class="form-group">
-                                <label>Phone </label>
+                                <label>{{ __('messages.phone') }} </label>
                                 <input type="text" name="phone" class="form-control" value="{{ $customer->phone }}">
                             </div>
                             <div class="form-group">
-                                <label>Will travel to </label>
+                                <label>{{ __('messages.will_travel_to') }} </label>
                                 <select name="country_id" id="" class="form-control">
-                                    <option value="" selected disabled>Choose a country</option>
+                                    <option value="" selected disabled>{{ __('messages.change_the_country') }}</option>
                                     @foreach ($countries as $country)
                                         <option value="{{ $country->id }}" @if ($country->id == $customer->country_id) selected="selected" @endif>
                                             {{ $country->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Change</button>
+                            <button type="submit" class="btn btn-primary">{{ __('messages.submit') }}</button>
                         </form>
                     </div>
                 </div>

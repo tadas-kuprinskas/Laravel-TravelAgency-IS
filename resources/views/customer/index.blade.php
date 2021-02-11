@@ -39,7 +39,7 @@
                 <form action={{ route('customer.destroy', $customer->id) }} method="POST">
                     <a class="btn btn-success" href={{ route('customer.edit', $customer->id) }}>{{ __('messages.edit') }}</a>
                     @csrf @method('delete')
-                    <input type="submit" class="btn btn-danger" value="Delete"/>
+                    <input type="submit" class="btn btn-danger" value="{{ __('messages.delete') }}"/>
                     <a href="{{ route('customer.travel', $customer->id) }}" class="btn btn-primary m-1">{{ __('messages.trip_details') }}</a>
                 </form>
             </td>
@@ -47,7 +47,7 @@
         @endforeach
     </table>
     <div>
-        <a href="{{ route('customer.create') }}" class="btn btn-success">Add</a>
+        <a href="{{ route('customer.create') }}" class="btn btn-success">{{ __('messages.add') }}</a>
     </div>
 </div>
 @endsection

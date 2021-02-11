@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<p>{{ App::getLocale() }}</p>
 <div class="card-body">
     <form class="form-inline" action="{{ route('town.index') }}" method="get">
         <select name="country_id" id="" class="form-control">
