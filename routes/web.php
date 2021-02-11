@@ -26,6 +26,13 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('town', App\Http\Controllers\TownController::class);
 });
 
+Route::get('/changelanguage/{locale}', function ($locale) {
+    if (!in_array($locale, ['en', 'lt'])) abort(400);
+    session(['locale' => $locale]);
+    app()->setLocale($locale);
+    return redirect()->back();
+});
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

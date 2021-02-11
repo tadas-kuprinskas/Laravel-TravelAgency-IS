@@ -40,13 +40,13 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                         <li class="nav-item">
-                            <a href="{{ route('country.index') }}" class="nav-link">Countries</a>
+                            <a href="{{ route('country.index') }}" class="nav-link">{{ __('messages.country') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('town.index') }}" class="nav-link">Towns</a>
+                            <a href="{{ route('town.index') }}" class="nav-link">{{ __('messages.town') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('customer.index') }}" class="nav-link">Clients</a>
+                            <a href="{{ route('customer.index') }}" class="nav-link">{{ __('messages.customer') }}</a>
                         </li>
                         @endauth
                     </ul>
@@ -57,13 +57,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('message.login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('message.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -76,7 +76,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('message.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
