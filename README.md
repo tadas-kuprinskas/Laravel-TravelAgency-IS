@@ -51,6 +51,10 @@ ___
 <div>
 <img src="public/images/country.png">
 <br>
+<img src="public/images/lt.png">
+<br>
+<img src="public/images/lt1.png">
+<br>
 <img src="public/images/customer.png">
 <br>
 <img src="public/images/details.png">
