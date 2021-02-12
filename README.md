@@ -14,8 +14,8 @@ ___
  <img src="public/images/database.png">
  :heavy_check_mark: Internationalism (EN and LT languages) <br> 
  :heavy_check_mark: Filtering towns and clients by country <br>
- :heavy_check_mark: Searching towns by name <br>  
- :heavy_check_mark: WYSIWYG ("TinyMCE") text editor <br> 
+ :heavy_check_mark: Searching towns by name   
+ :heavy_check_mark: WYSIWYG ("TinyMCE") text editor 
  ___
 <br>
 
