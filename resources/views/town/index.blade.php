@@ -14,7 +14,7 @@
             <button type="submit" class="btn btn-primary mx-2">{{ __('messages.filter') }}</button>
             <a class="btn btn-secondary" href={{ route('town.index') }}>{{ __('messages.show_all') }}</a>
             
-            <div class="ml-auto">
+            <div class="mx-auto pl-5">
 
                 <span class="input-group-btn mr-3">
                     <button class="btn btn-info" type="submit" title="Search town">
@@ -22,7 +22,7 @@
                     </button>
                 </span>
 
-                <input type="text" class="form-control mr-3" name="search" placeholder="{{ __('messages.town') }}" id="search">
+                <input type="text" class="form-control mr-3" name="search" placeholder="{{ __('messages.search') }}" id="search">
 
                 <a href="{{ route('town.index') }}" >
                     <span class="input-group-btn">
@@ -41,10 +41,10 @@
 
         <table class="table">
             <tr>
-                <th>{{ __('messages.title') }}</th>
-                <th>{{ __('messages.population') }}</th>
-                <th>{{ __('messages.country') }}</th>
-                <th>{{ __('messages.actions') }}</th>
+                <th class="font-weight-bold">{{ __('messages.title') }}</th>
+                <th class="font-weight-bold">{{ __('messages.population') }}</th>
+                <th class="font-weight-bold">{{ __('messages.country') }}</th>
+                <th class="font-weight-bold">{{ __('messages.actions') }}</th>
             </tr>
 
             @foreach ($towns as $town)

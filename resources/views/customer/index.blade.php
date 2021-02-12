@@ -21,12 +21,12 @@
     @endif
     <table class="table">
         <tr>
-            <th>{{ __('messages.name') }}</th>
-            <th>{{ __('messages.surname') }}</th>
-            <th>{{ __('messages.email') }}</th>
-            <th>{{ __('messages.phone') }}</th>
-            <th>{{ __('messages.country') }}</th>
-            <th>{{ __('messages.actions') }}</th>
+            <th class="font-weight-bold">{{ __('messages.name') }}</th>
+            <th class="font-weight-bold">{{ __('messages.surname') }}</th>
+            <th class="font-weight-bold">{{ __('messages.email') }}</th>
+            <th class="font-weight-bold">{{ __('messages.phone') }}</th>
+            <th class="font-weight-bold">{{ __('messages.country') }}</th>
+            <th class="font-weight-bold">{{ __('messages.actions') }}</th>
         </tr>
         @foreach ($customers as $customer)
         <tr>

@@ -5,23 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-
+    <style>
+        th{
+        font-size: 20px;
+        font-weight: 800;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,22 +47,20 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                             <li class="nav-item">
-                                <a href="{{ route('country.index') }}" class="nav-link">{{ __('messages.country') }}</a>
+                                <a href="{{ route('country.index') }}" class="font-weight-bold nav-link">{{ __('messages.country') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('town.index') }}" class="nav-link">{{ __('messages.town') }}</a>
+                                <a href="{{ route('town.index') }}" class="font-weight-bold nav-link">{{ __('messages.town') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('customer.index') }}"
-                                    class="nav-link">{{ __('messages.customer') }}</a>
+                                    class="font-weight-bold nav-link">{{ __('messages.customer') }}</a>
                             </li>
                         @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <a href="/changelanguage/en"><i title="English" class="flag flag-united-kingdom"></i></a>
-                        <a href="/changelanguage/lt"><i title="Lithuanian" class="flag flag-lithuania"></i></a>
 
                         <!-- Authentication Links -->
                         @guest
@@ -93,12 +95,14 @@
                                 </div>
                             </li>
                         @endguest
+                        <a href="/changelanguage/en"><i title="English" class="flag flag-united-kingdom ml-5"></i></a>
+                        <a href="/changelanguage/lt"><i title="Lithuanian" class="flag flag-lithuania"></i></a>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <main class="container">
+        <main class="mt-5 mx-5">
             @yield('content')
         </main>
 
@@ -110,7 +114,10 @@
         });
 
     </script>
-
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"
+></script>
 </body>
 
 </html>

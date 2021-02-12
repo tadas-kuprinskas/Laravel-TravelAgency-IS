@@ -36,4 +36,5 @@ return [
     'description' => 'Aprašymas',
     'create_a_country' => 'Pridėti šalį',
     'edit_a_country' => 'Redaguoti šalį',
+    'search' => 'Ieškoti'
 ];

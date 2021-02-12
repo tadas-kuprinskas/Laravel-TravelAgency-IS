@@ -3,10 +3,10 @@
 <div class="card-body">
     <table class="table">
         <tr>
-            <th>{{ __('messages.title') }}</th>
-            <th>{{ __('messages.distance') }}</th>
-            <th>{{ __('messages.description') }}</th>
-            <th>{{ __('messages.actions') }}</th>
+            <th class="font-weight-bold">{{ __('messages.title') }}</th>
+            <th class="font-weight-bold">{{ __('messages.distance') }}</th>
+            <th class="font-weight-bold">{{ __('messages.description') }}</th>
+            <th class="font-weight-bold">{{ __('messages.actions') }}</th>
         </tr>
         @foreach ($countries as $country)
         <tr>

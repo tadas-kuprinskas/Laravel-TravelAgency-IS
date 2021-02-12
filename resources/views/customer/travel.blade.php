@@ -8,11 +8,11 @@
         <h5>{{ __('messages.email') }}: {{ $customer->email }}</h5>
         <hr>
         <h5>{{ __('messages.country') }}:  {{ $customer->country->title }}</h5>
-        <h5>{{ __('messages.town') }}: </h5>
+       
         <table class="table">
             <tr>
-                <th>{{ __('messages.town') }}</th>
-                <th>{{ __('messages.population') }}</th>
+                <th class="font-weight-bold">{{ __('messages.town') }}</th>
+                <th class="font-weight-bold">{{ __('messages.population') }}</th>
             </tr>
             @foreach ($customer->country->towns as $town)
             <tr>

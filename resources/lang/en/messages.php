@@ -36,4 +36,5 @@ return [
     'description' => 'Description',
     'create_a_country' => 'Add a country',
     'edit_a_country' => 'Edit a coutry',
+    'search' => 'Search'
 ];
