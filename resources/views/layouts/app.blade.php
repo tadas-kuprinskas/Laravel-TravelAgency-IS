@@ -95,8 +95,8 @@
                                 </div>
                             </li>
                         @endguest
-                        <a href="/changelanguage/en"><i title="English" class="flag flag-united-kingdom ml-5"></i></a>
-                        <a href="/changelanguage/lt"><i title="Lithuanian" class="flag flag-lithuania"></i></a>
+                        <a href="{{ url('changelanguage/en') }}"><i title="English" class="flag flag-united-kingdom ml-5"></i></a>
+                        <a href="{{ url('changelanguage/lt') }}"><i title="Lithuanian" class="flag flag-lithuania"></i></a>
                     </ul>
                 </div>
             </div>
